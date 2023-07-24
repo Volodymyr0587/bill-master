@@ -7,7 +7,7 @@
         <div class="float-left right-auto text-center text-lg px-2 py-4 hover:text-green-500">
             <a href="{{ route('dashboard') }}">DASHBOARD</a>
         </div>
-        <div class="float-right right-auto text-center text-lg px-2 py-4 hover:text-green-500">
+        <div class="float-right right-auto text-center text-lg px-4 py-4 hover:text-green-500">
             <a href="#logout">LOGOUT</a>
         </div>
         <div class="float-right right-auto text-center text-lg px-2 py-4">
@@ -19,7 +19,7 @@
             <a href="{{ route('register') }}">REGISTER</a>
         </div>
         <div class="float-right right-auto text-center text-lg px-2 py-4 hover:text-green-500">
-            <a href="#login">LOGIN</a>
+            <a href="{{ route('login') }}">LOGIN</a>
         </div>
     @endguest
 </nav>
