@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('layouts.app');
 });
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
