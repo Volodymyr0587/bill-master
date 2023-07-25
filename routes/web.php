@@ -19,7 +19,7 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('home');
 })->name('home');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
