@@ -8,7 +8,10 @@
             <a href="{{ route('dashboard') }}">DASHBOARD</a>
         </div>
         <div class="float-right right-auto text-center text-lg px-4 py-4 hover:text-green-500">
-            <a href="#logout">LOGOUT</a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit">LOGOUT</button>
+            </form>
         </div>
         <div class="float-right right-auto text-center text-lg px-2 py-4">
             <a href="#">{{ auth()->user()->name }}</a>
