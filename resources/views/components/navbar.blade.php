@@ -1,4 +1,4 @@
-<nav class="sticky bg-lime-300 py-4 text-green-900 overflow-hidden">
+<nav class="sticky bg-sky-200 py-4 text-green-900 overflow-hidden">
     <a class="float-left text-center text-lg px-4 py-4 hover:text-green-500" href="/">HOME</a>
     <a class="float-left text-center text-lg px-4 py-4 hover:text-green-500" href="#news">NEWS</a>
     <a class="float-left text-center text-lg px-4 py-4 hover:text-green-500" href="#notification">NOTIFICATIONS</a>
