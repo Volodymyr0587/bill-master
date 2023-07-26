@@ -10,10 +10,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <x-body>
-    <x-header />
-
     <!-- Menu Navigation Bar -->
     <x-navbar />
+
+    <x-header />
 
     <!-- Main section -->
     <main class="mt-10">
