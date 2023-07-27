@@ -5,5 +5,7 @@
         <div class="w-8/12 bg-white p-6 rounded-lg">
             Home
         </div>
+
+        <a href="{{ route('electricity') }}">Electricty</a>
     </div>
 @endsection

@@ -30,9 +30,23 @@
                     @enderror
                 </div>
 
+                <div class="mb-4">
+                    <label for="price" class="sr-only">Price</label>
+                    <input type="text" name="price" id="price" placeholder="price"
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('price')
+                    border-red-500 @enderror"
+                        value="{{ old('price') }}">
+
+                    @error('price')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
                 <div>
                     <button type="submit"
-                        class="bg-green-900 text-white px-4 py-3 rounded font-medium w-full hover:bg-lime-300 hover:text-green-900">Login</button>
+                        class="bg-green-900 text-white px-4 py-3 rounded font-medium w-full hover:bg-lime-300 hover:text-green-900">Calculate</button>
                 </div>
             </form>
 

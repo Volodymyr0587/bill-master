@@ -5,5 +5,7 @@
         <div class="w-8/12 bg-white p-6 rounded-lg">
             Dashboard
         </div>
+
+        {{ $electricity }}
     </div>
 @endsection

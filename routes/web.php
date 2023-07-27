@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ElectricityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
@@ -36,6 +37,10 @@ Route::get('/login', [LoginController::class, 'index'])
 Route::post('login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
+Route::get('/electricity', [ElectricityController::class, 'index'])->name('electricity');
+Route::post('/electricity', [ElectricityController::class, 'store'])->middleware('auth');
+
 
 
 
