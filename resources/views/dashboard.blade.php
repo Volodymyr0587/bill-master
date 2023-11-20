@@ -6,6 +6,8 @@
             Dashboard
         </div>
 
-        {{ $electricity }}
+        @foreach ($electricity as $elect)
+            {{ $elect['kwatts'] }}
+        @endforeach
     </div>
 @endsection
