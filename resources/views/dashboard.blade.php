@@ -7,7 +7,7 @@
         </div>
 
         @foreach ($electricity as $elect)
-            {{ $elect['kwatts'] }}
+            {{ $elect['kwatts'] * $elect['price'] }}
         @endforeach
     </div>
 @endsection

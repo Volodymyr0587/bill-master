@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('electricities', function (Blueprint $table) {
             $table->id();
             $table->integer('kwatts');
-            $table->float('price', 4, 2);
+            $table->float('price');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
