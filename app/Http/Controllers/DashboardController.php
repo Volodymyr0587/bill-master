@@ -10,9 +10,7 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-
-        $electricity = $user->electricities->toArray();
         
-        return view('dashboard', ['electricity' => $electricity]);
+        return view('dashboard', ['user' => $user]);
     }
 }

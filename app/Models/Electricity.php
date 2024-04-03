@@ -9,7 +9,7 @@ class Electricity extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['kwatts', 'price'];
+    protected $fillable = ['kwatts', 'price', 'payment_date', 'is_paid'];
 
     public function user()
     {

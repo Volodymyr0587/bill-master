@@ -7,7 +7,7 @@
                 Electricity
             </div>
 
-            @if (session('status'))
+            @if (session()->has('status'))
                 <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
                     {{ session('status') }}
                 </div>
@@ -38,6 +38,33 @@
                         value="{{ old('price') }}">
 
                     @error('price')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="payment_date" class="sr-only">Payment date</label>
+                    <input type="date" name="payment_date" id="payment_date" placeholder="payment_date"
+                        class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('payment_date')
+                    border-red-500 @enderror"
+                        value="{{ old('payment_date') }}">
+
+                    @error('payment_date')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex items-center mb-4">
+                        <input id="default-checkbox" type="checkbox" name="is_paid" id="is_paid" value="1" {{ old('is_paid') == 1 ? 'checked' : '' }} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900">Is paid</label>
+                    </div>
+
+                    @error('is_paid')
                         <div class="text-red-500 mt-2 text-sm">
                             {{ $message }}
                         </div>

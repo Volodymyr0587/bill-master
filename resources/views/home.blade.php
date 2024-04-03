@@ -12,5 +12,5 @@
 
     </div> --}}
 
-    <x-table />
+    <x-services />
 @endsection

@@ -6,7 +6,7 @@
             Dashboard
         </div>
 
-        @foreach ($electricity as $elect)
+        @foreach ($user->electricities as $elect)
             {{ $elect['kwatts'] * $elect['price'] }}
         @endforeach
     </div>

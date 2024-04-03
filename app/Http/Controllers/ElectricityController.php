@@ -10,14 +10,16 @@ class ElectricityController extends Controller
 {
     public function index()
     {
-        return view('payments.electricity');
+        return view('payments.electricity.index');
     }
 
     public function store(Request $request)
     {
         $formFields = $this->validate($request, [
             'kwatts' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'payment_date' => 'required',
+            'is_paid' => 'boolean',
         ]);
 
 
