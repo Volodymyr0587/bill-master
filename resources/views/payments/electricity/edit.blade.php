@@ -4,7 +4,7 @@
     <div class="flex justify-center">
         <div class="w-6/12 bg-white p-6 rounded-lg">
             <div class="mb-2 text-xl font-bold">
-                Electricity
+                Electricity (Edit Payment)
             </div>
 
             @if (session()->has('status'))
@@ -13,7 +13,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('electricity.store') }}" method="POST">
+            <form action="{{ route('electricity.update', $electricity) }}" method="POST">
                 @csrf
 
                 <div class="mb-4">
@@ -21,7 +21,7 @@
                     <input type="number" min=1 name="kwatts" id="kwatts" placeholder="kWatts"
                         class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('kwatts')
                     border-red-500 @enderror"
-                        value="{{ old('kwatts') }}">
+                        value="{{ $electricity->kwatts }}">
 
                     @error('kwatts')
                         <div class="text-red-500 mt-2 text-sm">
@@ -35,7 +35,7 @@
                     <input type="number" step=".01" name="price" id="price" placeholder="price"
                         class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('price')
                     border-red-500 @enderror"
-                        value="{{ old('price') }}">
+                        value="{{ $electricity->price }}">
 
                     @error('price')
                         <div class="text-red-500 mt-2 text-sm">
@@ -49,7 +49,7 @@
                     <input type="date" name="payment_date" id="payment_date" placeholder="Payment date"
                         class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('payment_date')
                     border-red-500 @enderror"
-                        value="{{ old('payment_date') }}">
+                        value="{{ Carbon\Carbon::parse($electricity->payment_date)->format('Y-m-d') }}">
 
                     @error('payment_date')
                         <div class="text-red-500 mt-2 text-sm">
@@ -60,7 +60,7 @@
 
                 <div class="mb-4">
                     <div class="flex items-center mb-4">
-                        <input id="default-checkbox" type="checkbox" name="is_paid" id="is_paid" value="1" {{ old('is_paid') == 1 ? 'checked' : '' }} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <input id="default-checkbox" type="checkbox" name="is_paid" id="is_paid" value="1" {{ $electricity->is_paid == 1 ? 'checked' : '' }} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900">Is paid</label>
                     </div>
 
@@ -73,7 +73,7 @@
 
                 <div>
                     <button type="submit"
-                        class="bg-green-900 text-white px-4 py-3 rounded font-medium w-full hover:bg-lime-300 hover:text-green-900">Calculate</button>
+                        class="bg-green-900 text-white px-4 py-3 rounded font-medium w-full hover:bg-lime-300 hover:text-green-900">Recalculate</button>
                 </div>
             </form>
 
