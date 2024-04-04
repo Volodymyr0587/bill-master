@@ -46,7 +46,7 @@
 
                 <div class="mb-4">
                     <label for="payment_date" class="sr-only">Payment date</label>
-                    <input type="date" name="payment_date" id="payment_date" placeholder="payment_date"
+                    <input type="date" name="payment_date" id="payment_date" placeholder="Payment date"
                         class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('payment_date')
                     border-red-500 @enderror"
                         value="{{ old('payment_date') }}">

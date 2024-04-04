@@ -15,4 +15,8 @@ class Electricity extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    protected $casts = [
+        'payment_date' => 'datetime',
+    ];
 }
