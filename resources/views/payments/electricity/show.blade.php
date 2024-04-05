@@ -36,7 +36,7 @@
     </table>
     <div class="border-b border-neutral-200">
           <p>* KW - kilowatt  </p>
-        </div>
+    </div>
 
     <div class="mt-4">
         {{ $electricity->links() }}
