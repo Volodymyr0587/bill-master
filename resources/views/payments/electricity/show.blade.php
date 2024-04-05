@@ -4,6 +4,8 @@
 
 <div class="mx-20">
 
+    <x-message />
+
      <table
       class="min-w-full text-left text-sm font-light text-surface">
       <thead
@@ -18,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($user->electricities as $electricity)
+        @foreach($electricity as $electricity)
             <tr class="border-b border-neutral-200">
               <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $electricity->kwatts }}</td>
               <td class="whitespace-nowrap px-6 py-4">{{ $electricity->price }}</td>

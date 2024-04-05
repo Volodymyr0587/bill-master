@@ -77,7 +77,13 @@
                 </div>
             </form>
 
-
+            <form action="{{ route('electricity.destroy', $electricity) }}" method="POST"
+                class="mt-3">
+                @csrf
+                @method('DELETE')
+                <button type="submit" onclick="return confirm('Are you sure?')"
+                        class="bg-red-900 text-white px-4 py-3 rounded font-medium w-full hover:bg-lime-300 hover:text-green-900">Delete</button>
+            </form>
         </div>
     </div>
 @endsection

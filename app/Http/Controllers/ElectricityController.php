@@ -31,16 +31,16 @@ class ElectricityController extends Controller
         // Associate the expense with the authenticated user
         $user->electricities()->save($electricity);
 
-        return redirect('dashboard');
+        return redirect()->route('electricity.show')->with('message.create', 'Payment created successfully');
     }
 
     public function show()
     {
         $user = Auth::user();
 
-        $electricity = $user->electricities()->get();
+        $electricity = $user->electricities()->orderBy('payment_date', 'desc')->get();
 
-        return view('payments.electricity.show', ['user' => $user, 'electricity' => $electricity]);
+        return view('payments.electricity.show', ['electricity' => $electricity]);
     }
 
 
@@ -66,6 +66,12 @@ class ElectricityController extends Controller
         // // Debugging
         // Log::info('is_paid value: ' . $electricity->is_paid);
 
-        return redirect('dashboard');
+        return redirect()->route('electricity.show')->with('message.update', 'Payment updated successfully');
+    }
+
+    public function destroy(Electricity $electricity)
+    {
+        $electricity->delete();
+        return redirect()->route('electricity.show')->with('message.destroy', 'Payment deleted successfully');
     }
 }

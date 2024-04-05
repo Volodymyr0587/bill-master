@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/electricity', [ElectricityController::class, 'store'])->name('electricity.store');
     Route::get('/electricity/edit/{electricity}', [ElectricityController::class, 'edit'])->name('electricity.edit');
     Route::post('/electricity/{electricity}', [ElectricityController::class, 'update'])->name('electricity.update');
+    Route::delete('/electricity/{electricity}', [ElectricityController::class, 'destroy'])->name('electricity.destroy');
 });
 
 
