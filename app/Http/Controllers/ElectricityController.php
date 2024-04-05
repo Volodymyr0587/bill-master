@@ -38,7 +38,7 @@ class ElectricityController extends Controller
     {
         $user = Auth::user();
 
-        $electricity = $user->electricities()->orderBy('payment_date', 'desc')->get();
+        $electricity = $user->electricities()->orderBy('payment_date', 'desc')->simplePaginate(5);
 
         return view('payments.electricity.show', ['electricity' => $electricity]);
     }
