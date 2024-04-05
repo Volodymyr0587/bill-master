@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Electricity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ElectricityController extends Controller
 {
@@ -58,7 +59,12 @@ class ElectricityController extends Controller
             'is_paid' => 'boolean',
         ]);
 
+        $electricity->is_paid = $request->boolean('is_paid');
+
         $electricity->update($formFields);
+
+        // // Debugging
+        // Log::info('is_paid value: ' . $electricity->is_paid);
 
         return redirect('dashboard');
     }
