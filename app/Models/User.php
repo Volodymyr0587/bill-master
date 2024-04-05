@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Electricity::class);
     }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

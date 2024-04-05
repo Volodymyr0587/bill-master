@@ -16,7 +16,7 @@
       @elseif($name == 'Water')
       ....
       @else
-      This category does not exist
+        Custom Service
       @endif
     </p>
   </div>

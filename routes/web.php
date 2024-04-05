@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ElectricityController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
@@ -36,6 +37,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/electricity/edit/{electricity}', [ElectricityController::class, 'edit'])->name('electricity.edit');
     Route::post('/electricity/{electricity}', [ElectricityController::class, 'update'])->name('electricity.update');
     Route::delete('/electricity/{electricity}', [ElectricityController::class, 'destroy'])->name('electricity.destroy');
+
+
+    Route::get('/service', [ServiceController::class, 'index'])->name('service');
+    Route::get('/service', [ServiceController::class, 'create'])->name('service.create');
+    Route::get('/service/details', [ServiceController::class, 'show'])->name('service.show');
+    Route::post('/service', [ServiceController::class, 'store'])->name('service.store');
+    Route::get('/service/edit/{service}', [ServiceController::class, 'edit'])->name('service.edit');
+    Route::post('/service/{service}', [ServiceController::class, 'update'])->name('service.update');
+    Route::delete('/service/{service}', [ServiceController::class, 'destroy'])->name('service.destroy');
+
+
 });
 
 
