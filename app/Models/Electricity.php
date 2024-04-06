@@ -16,6 +16,11 @@ class Electricity extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'notifiable');
+    }
+
     protected $casts = [
         'payment_date' => 'datetime',
     ];

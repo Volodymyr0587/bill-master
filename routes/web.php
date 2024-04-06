@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-
+use App\Models\Notification;
 
 Route::get('/', function () {
     return view('home');
@@ -47,7 +47,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/service/{service}', [ServiceController::class, 'update'])->name('service.update');
     Route::delete('/service/{service}', [ServiceController::class, 'destroy'])->name('service.destroy');
 
-
+    // Notification
+    Route::get('/notification', function() {
+        $notifications = Notification::all();
+        return view('notifications', compact('notifications'));
+    })->name('notifications');
 });
 
 
