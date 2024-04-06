@@ -20,18 +20,13 @@
                   <a href="{{ route('electricity.show') }}">Detail</a>
               </td>
             </tr>
-            @forelse(App\Models\Service::selectRaw('MIN(id) as id, name')->groupBy('name')->get(); as $service)
-              <tr>
-                <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $service->name }}</td>
-                <td class="whitespace-nowrap px-6 py-4">
-                    <a href="{{ route('service.show') }}">Detail</a>
-                </td>
-              </tr>
-            @empty
 
-            @endforelse
-
-
+            <tr>
+              <td class="whitespace-nowrap px-6 py-4 font-medium">Custom Services</td>
+              <td class="whitespace-nowrap px-6 py-4">
+                  <a href="{{ route('service.show') }}">Detail</a>
+              </td>
+            </tr>
       </tbody>
     </table>
 
