@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-
+    // Electricity service
     Route::get('/electricity', [ElectricityController::class, 'index'])->name('electricity');
     Route::get('/electricity/details', [ElectricityController::class, 'show'])->name('electricity.show');
     Route::post('/electricity', [ElectricityController::class, 'store'])->name('electricity.store');
@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/electricity/{electricity}', [ElectricityController::class, 'update'])->name('electricity.update');
     Route::delete('/electricity/{electricity}', [ElectricityController::class, 'destroy'])->name('electricity.destroy');
 
-
+    // Custom service
     Route::get('/service', [ServiceController::class, 'index'])->name('service');
     Route::get('/service', [ServiceController::class, 'create'])->name('service.create');
     Route::get('/service/details', [ServiceController::class, 'show'])->name('service.show');
