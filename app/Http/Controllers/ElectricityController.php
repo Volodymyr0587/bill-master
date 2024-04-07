@@ -31,6 +31,9 @@ class ElectricityController extends Controller
         // Associate the expense with the authenticated user
         $user->electricities()->save($electricity);
 
+        // Set a success toast, with a title
+        toastr()->success('Data has been saved successfully!', 'Congrats');
+
         return redirect()->route('electricity.show')->with('message.create', 'Payment created successfully');
     }
 
@@ -66,12 +69,16 @@ class ElectricityController extends Controller
         // // Debugging
         // Log::info('is_paid value: ' . $electricity->is_paid);
 
+        toastr()->info('Data has been updated successfully!', 'Congrats');
+
         return redirect()->route('electricity.show')->with('message.update', 'Payment updated successfully');
     }
 
     public function destroy(Electricity $electricity)
     {
         $electricity->delete();
+
+        toastr()->warning('Data has been deleted successfully!', 'Congrats');
         return redirect()->route('electricity.show')->with('message.destroy', 'Payment deleted successfully');
     }
 }
